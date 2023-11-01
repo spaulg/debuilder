@@ -23,5 +23,7 @@ image:
     RUN echo "Cmnd_Alias MK_BUILD_DEPS=/usr/bin/mk-build-deps * " >> /etc/sudoers.d/build
     RUN echo "build ALL=(ALL) NOPASSWD:MK_BUILD_DEPS, DPKG_ADD_ARCH, APT_UPDATE" >> /etc/sudoers.d/build
 
+    RUN mkdir -p /home/build/packages
+
     WORKDIR /home/build
     USER build
